@@ -1,0 +1,498 @@
+# This file contains the translation strings for English
+msgid ""
+msgstr ""
+"Project-Id-Version: Clinic Management System\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-16 12:00+0700\n"
+"PO-Revision-Date: 2025-09-30 08:56+0700\n"
+"Last-Translator: Developer\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: General terms
+msgid "Private Clinic Management System"
+msgstr "Private Clinic Management System"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Book Appointment"
+msgstr "Book Appointment"
+
+msgid "Book now"
+msgstr "Book now"
+
+msgid "Patient Search"
+msgstr "Patient Search"
+
+msgid "Search records"
+msgstr "Search records"
+
+msgid "About"
+msgstr "About"
+
+msgid "About Our Project"
+msgstr "About Our Project"
+
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Our Services"
+msgstr "Our Services"
+
+msgid "Easy Booking"
+msgstr "Easy Booking"
+
+msgid "Patient Records"
+msgstr "Patient Records"
+
+msgid "About Project"
+msgstr "About Project"
+
+msgid "Need help?"
+msgstr "Need help?"
+
+msgid "If you have any questions or need assistance, please don't hesitate to contact us. Our team is here to help you with any inquiries."
+msgstr "If you have any questions or need assistance, please don't hesitate to contact us. Our team is here to help you with any inquiries."
+
+msgid "Call Us"
+msgstr "Call Us"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "A simple and effective solution for managing private clinics. Book appointments, manage patients, and streamline your healthcare practice."
+msgstr "A simple and effective solution for managing private clinics. Book appointments, manage patients, and streamline your healthcare practice."
+
+msgid "Patients can easily book appointments with their preferred doctors using our simple booking system. Choose your doctor, select a convenient time, and you're all set!"
+msgstr "Patients can easily book appointments with their preferred doctors using our simple booking system. Choose your doctor, select a convenient time, and you're all set!"
+
+msgid "Access your medical history and appointment records with a simple phone number verification. Our system ensures your data is secure while providing easy access when needed."
+msgstr "Access your medical history and appointment records with a simple phone number verification. Our system ensures your data is secure while providing easy access when needed."
+
+msgid "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. Learn more about our goals and how you can contribute."
+msgstr "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. Learn more about our goals and how you can contribute."
+
+#: Patient related
+msgid "Patient"
+msgstr "Patient"
+
+msgid "Patients"
+msgstr "Patients"
+
+msgid "Patient Details"
+msgstr "Patient Details"
+
+msgid "Patient ID"
+msgstr "Patient ID"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Full Name"
+msgstr "Full Name"
+
+# Phone is already defined above
+# msgid "Phone"
+# msgstr "Phone"
+
+msgid "Phone Number"
+msgstr "Phone Number"
+
+msgid "Medical History"
+msgstr "Medical History"
+
+msgid "Date of Birth"
+msgstr "Date of Birth"
+
+msgid "Gender"
+msgstr "Gender"
+
+msgid "Male"
+msgstr "Male"
+
+msgid "Female"
+msgstr "Female"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Patient Record"
+msgstr "Patient Record"
+
+msgid "Patient List"
+msgstr "Patient List"
+
+msgid "All Patients"
+msgstr "All Patients"
+
+msgid "Add New Patient"
+msgstr "Add New Patient"
+
+msgid "Update Patient"
+msgstr "Update Patient"
+
+msgid "Delete Patient"
+msgstr "Delete Patient"
+
+msgid "No medical history recorded."
+msgstr "No medical history recorded."
+
+msgid "No patients found."
+msgstr "No patients found."
+
+msgid "Search patients..."
+msgstr "Search patients..."
+
+msgid "Personal Information"
+msgstr "Personal Information"
+
+msgid "Back to Patient List"
+msgstr "Back to Patient List"
+
+msgid "patients"
+msgstr "patients"
+
+msgid "Showing"
+msgstr "Showing"
+
+msgid "Recent Patients"
+msgstr "Recent Patients"
+
+#: Appointment related
+msgid "Appointment"
+msgstr "Appointment"
+
+msgid "Appointments"
+msgstr "Appointments"
+
+msgid "Appointment Details"
+msgstr "Appointment Details"
+
+msgid "Appointment Information"
+msgstr "Appointment Information"
+
+msgid "Date & Time"
+msgstr "Date & Time"
+
+msgid "Date and Time"
+msgstr "Date and Time"
+
+msgid "Time"
+msgstr "Time"
+
+msgid "Doctor"
+msgstr "Doctor"
+
+msgid "Note"
+msgstr "Note"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "Scheduled"
+msgstr "Scheduled"
+
+msgid "Confirmed"
+msgstr "Confirmed"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "Cancelled"
+msgstr "Cancelled"
+
+msgid "No Show"
+msgstr "No Show"
+
+msgid "Appointment List"
+msgstr "Appointment List"
+
+msgid "All Appointments"
+msgstr "All Appointments"
+
+msgid "Create New Appointment"
+msgstr "Create New Appointment"
+
+msgid "Update Appointment"
+msgstr "Update Appointment"
+
+msgid "Delete Appointment"
+msgstr "Delete Appointment"
+
+msgid "Booking Successful"
+msgstr "Booking Successful"
+
+msgid "No appointments found."
+msgstr "No appointments found."
+
+msgid "No appointments recorded."
+msgstr "No appointments recorded."
+
+msgid "No appointments scheduled for today."
+msgstr "No appointments scheduled for today."
+
+msgid "Appointment Date"
+msgstr "Appointment Date"
+
+msgid "Appointment Date & Time"
+msgstr "Appointment Date & Time"
+
+msgid "Select the patient for this appointment"
+msgstr "Select the patient for this appointment"
+
+msgid "Select the doctor for this appointment"
+msgstr "Select the doctor for this appointment"
+
+msgid "Select the date and time for this appointment"
+msgstr "Select the date and time for this appointment"
+
+msgid "Select the current status of this appointment"
+msgstr "Select the current status of this appointment"
+
+msgid "Add any additional notes about this appointment"
+msgstr "Add any additional notes about this appointment"
+
+msgid "appointments"
+msgstr "appointments"
+
+msgid "Appointment History"
+msgstr "Appointment History"
+
+msgid "Today's Appointments"
+msgstr "Today's Appointments"
+
+msgid "Pending Appointments"
+msgstr "Pending Appointments"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "All"
+msgstr "All"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "This Week"
+msgstr "This Week"
+
+msgid "Confirm Deletion"
+msgstr "Confirm Deletion"
+
+msgid "Are you sure you want to delete this appointment?"
+msgstr "Are you sure you want to delete this appointment?"
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Details"
+msgstr "Details"
+
+#: Staff related
+msgid "Staff"
+msgstr "Staff"
+
+msgid "Staff Dashboard"
+msgstr "Staff Dashboard"
+
+msgid "Role"
+msgstr "Role"
+
+msgid "Specialization"
+msgstr "Specialization"
+
+msgid "Work Schedule"
+msgstr "Work Schedule"
+
+msgid "Biography"
+msgstr "Biography"
+
+msgid "Staff List"
+msgstr "Staff List"
+
+msgid "Add New Staff Member"
+msgstr "Add New Staff Member"
+
+msgid "Update Staff Member"
+msgstr "Update Staff Member"
+
+msgid "Delete Staff Member"
+msgstr "Delete Staff Member"
+
+msgid "Quick Actions"
+msgstr "Quick Actions"
+
+msgid "Quick Links"
+msgstr "Quick Links"
+
+msgid "Total Patients"
+msgstr "Total Patients"
+
+msgid "Total Doctors"
+msgstr "Total Doctors"
+
+msgid "View All Appointments"
+msgstr "View All Appointments"
+
+msgid "View All Patients"
+msgstr "View All Patients"
+
+msgid "Register New Patient"
+msgstr "Register New Patient"
+
+msgid "Manage Staff"
+msgstr "Manage Staff"
+
+#: Roles
+msgid "Nurse"
+msgstr "Nurse"
+
+msgid "Receptionist"
+msgstr "Receptionist"
+
+msgid "Administrator"
+msgstr "Administrator"
+
+#: About page
+msgid "Project Goals"
+msgstr "Project Goals"
+
+msgid "Our main goal is to provide a free, open-source solution for private clinics in Vietnam. We aim to simplify the management of appointments, patient records, and staff scheduling."
+msgstr "Our main goal is to provide a free, open-source solution for private clinics in Vietnam. We aim to simplify the management of appointments, patient records, and staff scheduling."
+
+msgid "By creating an easy-to-use system, we hope to help clinics focus more on patient care and less on administrative tasks."
+msgstr "By creating an easy-to-use system, we hope to help clinics focus more on patient care and less on administrative tasks."
+
+msgid "Features"
+msgstr "Features"
+
+msgid "Appointment Booking"
+msgstr "Appointment Booking"
+
+msgid "Easy online booking system for patients"
+msgstr "Easy online booking system for patients"
+
+msgid "Staff Management"
+msgstr "Staff Management"
+
+msgid "Manage doctors and staff schedules"
+msgstr "Manage doctors and staff schedules"
+
+# Patient Records is already defined above
+msgid "Secure patient data management"
+msgstr "Secure patient data management"
+
+msgid "Multilingual"
+msgstr "Multilingual"
+
+msgid "Support for Vietnamese and English"
+msgstr "Support for Vietnamese and English"
+
+msgid "Open Source"
+msgstr "Open Source"
+
+msgid "This project is completely open-source and free to use. You can find the source code on GitHub and contribute to its development."
+msgstr "This project is completely open-source and free to use. You can find the source code on GitHub and contribute to its development."
+
+msgid "We welcome contributions from developers, healthcare professionals, and anyone interested in improving healthcare management systems."
+msgstr "We welcome contributions from developers, healthcare professionals, and anyone interested in improving healthcare management systems."
+
+msgid "View on GitHub"
+msgstr "View on GitHub"
+
+msgid "Contact Us"
+msgstr "Contact Us"
+
+msgid "Have questions or suggestions? We'd love to hear from you!"
+msgstr "Have questions or suggestions? We'd love to hear from you!"
+
+msgid "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. The system provides tools for appointment booking, patient management, and staff administration."
+msgstr "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. The system provides tools for appointment booking, patient management, and staff administration."
+
+msgid "Community Project: Private Clinic Management System"
+msgstr "Community Project: Private Clinic Management System"
+
+msgid "Free"
+msgstr "Free"
+
+# Open Source is already defined above
+# msgid "Open Source"
+# msgstr "Open Source"
+
+msgid "Supporting Vietnamese Doctors"
+msgstr "Supporting Vietnamese Doctors"
+
+msgid "Download source code here"
+msgstr "Download source code here"
+
+msgid "Main Features"
+msgstr "Main Features"
+
+msgid "Contributions"
+msgstr "Contributions"
+
+#: Actions
+msgid "Save"
+msgstr "Save"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "View"
+msgstr "View"
+
+msgid "View details"
+msgstr "View details"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Return to Home"
+msgstr "Return to Home"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Back to List"
+msgstr "Back to List"
+
+msgid "New Appointment"
+msgstr "New Appointment"
+
+msgid "New appointment"
+msgstr "New appointment"
+
+msgid "Clinic Logo"
+msgstr "Clinic Logo"

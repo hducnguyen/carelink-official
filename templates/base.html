@@ -1,0 +1,696 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="{% if LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% else %}vi{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Private Clinic Management System" %}{% endblock %}</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --primary-dark: #3a5ecc;
+            --primary-light: #6f8df7;
+            --secondary-color: #1cc88a;
+            --secondary-dark: #169e6c;
+            --accent-color: #f6c23e;
+            --accent-dark: #e0ad2d;
+            --danger-color: #e74a3b;
+            --dark-color: #5a5c69;
+            --light-color: #f8f9fc;
+            --text-color: #444;
+            --text-muted: #6c757d;
+            --border-radius: 0.5rem;
+            --box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding-top: 70px;
+            padding-bottom: 0;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .navbar {
+            box-shadow: var(--box-shadow);
+            padding: 0.75rem 1rem;
+        }
+        
+        .navbar-brand img {
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+        
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn {
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1.25rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .alert {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .dropdown-menu {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .dropdown-item {
+            border-radius: calc(var(--border-radius) - 0.25rem);
+            padding: 0.5rem 1rem;
+            transition: var(--transition);
+        }
+        
+        .language-selector .dropdown-menu {
+            min-width: 10rem;
+        }
+        
+        .language-selector .dropdown-item {
+            padding: 0.5rem 1.5rem;
+        }
+        
+        .language-selector .dropdown-item:hover, .dropdown-item:focus {
+            background-color: rgba(78, 115, 223, 0.1);
+            transform: translateX(5px);
+            color: var(--primary-color);
+        }
+        
+        .page-section {
+            padding: 5rem 0;
+        }
+        
+        footer {
+            background-color: #fff;
+            box-shadow: 0 -0.15rem 1.75rem 0 rgba(58, 59, 69, 0.05);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-links h5 {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 50px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            display: block;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:before {
+            content: "\f105";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            padding-left: 20px;
+        }
+        
+        .footer-links a:hover:before {
+            left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            padding: 1.25rem 1.5rem;
+        }
+        
+        .card-footer {
+            background-color: white;
+            border-top: 1px solid rgba(0,0,0,.05);
+            padding: 1.25rem 1.5rem;
+        }
+        
+        /* Border start styles */
+        .border-start-primary {
+            border-left: 0.25rem solid var(--primary-color) !important;
+        }
+        
+        .border-start-secondary {
+            border-left: 0.25rem solid var(--secondary-color) !important;
+        }
+        
+        .border-start-success {
+            border-left: 0.25rem solid var(--secondary-color) !important;
+        }
+        
+        .border-start-info {
+            border-left: 0.25rem solid #36b9cc !important;
+        }
+        
+        .border-start-warning {
+            border-left: 0.25rem solid var(--accent-color) !important;
+        }
+        
+        .border-start-danger {
+            border-left: 0.25rem solid var(--danger-color) !important;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Page transitions */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            z-index: 9999;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s ease;
+        }
+        
+        .page-transition.active {
+            transform: scaleY(1);
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(78, 115, 223, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar-brand span {
+                font-size: 0.9rem;
+            }
+            
+            .display-4 {
+                font-size: calc(1.375rem + 1.5vw);
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'app_home:home' %}">
+                <img src="https://cdn-icons-png.flaticon.com/512/2376/2376100.png" alt="Clinic Logo" class="me-2">
+                <span class="d-none d-md-inline fw-bold">MediCare</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app_home:home' %}">
+                            <i class="fas fa-home me-1"></i> {% trans "Home" %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app_booking:public_booking' %}">
+                            <i class="fas fa-calendar-plus me-1"></i> {% trans "Book Appointment" %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app_patient:patient_search' %}">
+                            <i class="fas fa-search me-1"></i> {% trans "Patient Search" %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app_home:about' %}">
+                            <i class="fas fa-info-circle me-1"></i> {% trans "About" %}
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Language Selector -->
+                <div class="language-selector dropdown me-3">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <span class="me-2">🇺🇸</span> English
+                        {% else %}
+                            <span class="me-2">🇻🇳</span> Tiếng Việt
+                        {% endif %}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        <form action="{% url 'set_language' %}" method="post" id="language-form">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <li>
+                                <button type="submit" name="language" value="vi" class="dropdown-item d-flex align-items-center">
+                                    <span class="me-2">🇻🇳</span> Tiếng Việt
+                                </button>
+                            </li>
+                            <li>
+                                <button type="submit" name="language" value="en" class="dropdown-item d-flex align-items-center">
+                                    <span class="me-2">🇺🇸</span> English
+                                </button>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+                
+                <!-- User Menu -->
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle me-2"></i>
+                                {% if user.staff_profile %}
+                                    {{ user.staff_profile.name }}
+                                {% else %}
+                                    {{ user.username }}
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="{% url 'app_staff:dashboard' %}"><i class="fas fa-tachometer-alt me-2"></i>{% trans "Dashboard" %}</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog me-2"></i>{% trans "Profile" %}</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>{% trans "Settings" %}</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'app_auth:logout' %}"><i class="fas fa-sign-out-alt me-2"></i>{% trans "Logout" %}</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-light btn-sm px-3" href="{% url 'app_auth:login' %}">
+                                <i class="fas fa-sign-in-alt me-1"></i> {% trans "Login" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Messages -->
+    <div class="container mt-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert" data-aos="fade-down" data-aos-delay="100">
+                    <i class="fas {% if message.tags == 'success' %}fa-check-circle{% elif message.tags == 'error' or message.tags == 'danger' %}fa-exclamation-circle{% elif message.tags == 'warning' %}fa-exclamation-triangle{% else %}fa-info-circle{% endif %} me-2"></i>
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mt-4 fade-in">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2376/2376100.png" alt="Clinic Logo" height="40" class="me-2">
+                        <h4 class="mb-0">MediCare</h4>
+                    </div>
+                    <p class="text-muted mb-4">{% trans "A simple and effective solution for managing private clinics. Book appointments, manage patients, and streamline your healthcare practice." %}</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/example/clinic-management" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links mb-4 mb-md-0">
+                    <h5>{% trans "Quick Links" %}</h5>
+                    <ul>
+                        <li><a href="{% url 'app_home:home' %}">{% trans "Home" %}</a></li>
+                        <li><a href="{% url 'app_booking:public_booking' %}">{% trans "Book Appointment" %}</a></li>
+                        <li><a href="{% url 'app_patient:patient_search' %}">{% trans "Patient Search" %}</a></li>
+                        <li><a href="{% url 'app_home:about' %}">{% trans "About Us" %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links mb-4 mb-md-0">
+                    <h5>{% trans "Our Services" %}</h5>
+                    <ul>
+                        <li><a href="#">{% trans "General Medicine" %}</a></li>
+                        <li><a href="#">{% trans "Pediatrics" %}</a></li>
+                        <li><a href="#">{% trans "Cardiology" %}</a></li>
+                        <li><a href="#">{% trans "Dermatology" %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <h5>{% trans "Contact Us" %}</h5>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Medical Street, Hanoi, Vietnam</p>
+                    <p class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> <a href="tel:+84123456789">+84 123 456 789</a></p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> <a href="mailto:support@clinic.com">support@clinic.com</a></p>
+                    <p class="mb-0"><i class="fas fa-clock me-2 text-primary"></i> {% trans "Mon-Sat: 8:00 AM - 8:00 PM" %}</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 {% trans "MediCare" %} | {% trans "All Rights Reserved" %}</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">{% trans "Open Source Project" %} | <a href="https://github.com/example/clinic-management" target="_blank" class="text-decoration-none fw-bold"><i class="fab fa-github me-1"></i>GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Preloader
+            setTimeout(function() {
+                document.querySelector('.preloader').classList.add('fade-out');
+            }, 500);
+            
+            // Add active class to current nav item
+            const currentLocation = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentLocation) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+            
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Auto-hide alerts after 5 seconds
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    const bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                }, 5000);
+            });
+            
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Page transition for links
+            document.querySelectorAll('a').forEach(link => {
+                // Skip links that should not trigger page transition
+                if (link.getAttribute('href') && 
+                    !link.getAttribute('href').startsWith('#') && 
+                    !link.getAttribute('href').startsWith('mailto:') && 
+                    !link.getAttribute('href').startsWith('tel:') &&
+                    !link.getAttribute('target') &&
+                    !link.classList.contains('dropdown-toggle')) {
+                    
+                    link.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href && !href.includes('javascript:')) {
+                            e.preventDefault();
+                            const transition = document.querySelector('.page-transition');
+                            transition.classList.add('active');
+                            
+                            setTimeout(() => {
+                                window.location.href = href;
+                            }, 500);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

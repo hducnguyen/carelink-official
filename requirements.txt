@@ -1,0 +1,7 @@
+Django==4.2.10
+django-bootstrap5==23.3
+django-crispy-forms==2.1
+crispy-bootstrap5==2023.10
+pillow==10.2.0
+python-dotenv==1.0.1
+django-modeltranslation==0.18.11

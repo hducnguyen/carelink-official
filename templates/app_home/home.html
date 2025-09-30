@@ -1,0 +1,350 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Private Clinic Management System" %}{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Hero section styles */
+    .hero-section {
+        background: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
+        color: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('https://img.freepik.com/free-vector/abstract-medical-background-with-hexagons-pattern_1017-26877.jpg');
+        background-size: cover;
+        opacity: 0.1;
+        z-index: 0;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .hero-image {
+        transition: transform 0.5s ease;
+    }
+    
+    .hero-section:hover .hero-image {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    /* Services section styles */
+    .service-card {
+        height: 100%;
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .feature-icon {
+        transform: rotateY(180deg);
+    }
+    
+    .icon-link {
+        position: relative;
+        font-weight: 600;
+        color: #4e73df;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .icon-link:hover {
+        color: #224abe;
+        transform: translateX(5px);
+    }
+    
+    /* Help section styles */
+    .help-section {
+        background: linear-gradient(135deg, #f8f9fc 0%, #e8eaed 100%);
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .help-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('https://img.freepik.com/free-vector/abstract-medical-wallpaper-template-design_53876-61802.jpg');
+        background-size: cover;
+        opacity: 0.05;
+        z-index: 0;
+    }
+    
+    .help-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .btn-contact {
+        transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Animation */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    }
+    
+    .testimonial-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    }
+    
+    .testimonial-rating {
+        color: #f6c23e;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section px-4 py-5 my-5 text-center">
+    <div class="hero-content py-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/2376/2376100.png" alt="{% trans 'Clinic Logo' %}" width="100" height="100" class="d-block mx-auto mb-4 hero-image">
+        <h1 class="display-4 fw-bold text-white mb-4">{% trans "Private Clinic Management System" %}</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4 text-white opacity-90">
+                {% trans "A simple and effective solution for managing private clinics. Book appointments, manage patients, and streamline your healthcare practice." %}
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-5">
+                <a href="{% url 'app_booking:public_booking' %}" class="btn btn-light btn-lg px-4 gap-3 d-flex align-items-center">
+                    <i class="fas fa-calendar-plus me-2"></i> {% trans "Book Appointment" %}
+                </a>
+                <a href="{% url 'app_patient:patient_search' %}" class="btn btn-outline-light btn-lg px-4 d-flex align-items-center">
+                    <i class="fas fa-search me-2"></i> {% trans "Patient Search" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div class="container px-4 py-5 animate-on-scroll" id="featured-3">
+    <h2 class="pb-2 border-bottom text-center mb-5">
+        <i class="fas fa-star-of-life text-primary me-2"></i>
+        {% trans "Our Services" %}
+    </h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col">
+            <div class="card service-card h-100 shadow">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-calendar-check text-white fs-3"></i>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">{% trans "Easy Booking" %}</h3>
+                    <p class="text-muted">{% trans "Patients can easily book appointments with their preferred doctors using our simple booking system. Choose your doctor, select a convenient time, and you're all set!" %}</p>
+                    <a href="{% url 'app_booking:public_booking' %}" class="icon-link d-inline-flex align-items-center mt-3">
+                        {% trans "Book now" %}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card service-card h-100 shadow">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-user-md text-white fs-3"></i>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">{% trans "Patient Records" %}</h3>
+                    <p class="text-muted">{% trans "Access your medical history and appointment records with a simple phone number verification. Our system ensures your data is secure while providing easy access when needed." %}</p>
+                    <a href="{% url 'app_patient:patient_search' %}" class="icon-link d-inline-flex align-items-center mt-3">
+                        {% trans "Search records" %}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card service-card h-100 shadow">
+                <div class="card-body text-center p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-info-circle text-white fs-3"></i>
+                    </div>
+                    <h3 class="fs-2 text-body-emphasis">{% trans "About Project" %}</h3>
+                    <p class="text-muted">{% trans "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. Learn more about our goals and how you can contribute." %}</p>
+                    <a href="{% url 'app_home:about' %}" class="icon-link d-inline-flex align-items-center mt-3">
+                        {% trans "Learn more" %}
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Stats Section -->
+<div class="container px-4 py-5 animate-on-scroll">
+    <div class="row g-4 py-4 row-cols-1 row-cols-md-2 row-cols-lg-4 text-center">
+        <div class="col">
+            <div class="card h-100 shadow border-start-primary">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <div class="text-xs fw-bold text-primary text-uppercase mb-1">{% trans "Doctors" %}</div>
+                            <div class="h2 mb-0 fw-bold">25+</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-md fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow border-start-success">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <div class="text-xs fw-bold text-success text-uppercase mb-1">{% trans "Patients" %}</div>
+                            <div class="h2 mb-0 fw-bold">10,000+</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow border-start-info">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <div class="text-xs fw-bold text-info text-uppercase mb-1">{% trans "Appointments" %}</div>
+                            <div class="h2 mb-0 fw-bold">50,000+</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow border-start-warning">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <div class="text-xs fw-bold text-warning text-uppercase mb-1">{% trans "Satisfaction" %}</div>
+                            <div class="h2 mb-0 fw-bold">98%</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-smile fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Section -->
+<div class="container animate-on-scroll">
+    <div class="help-section p-5 text-center mb-5">
+        <div class="help-content">
+            <h2 class="text-body-emphasis mb-4">
+                <i class="fas fa-headset text-primary me-2"></i>
+                {% trans "Need help?" %}
+            </h2>
+            <p class="col-lg-8 mx-auto fs-5 text-muted mb-4">
+                {% trans "If you have any questions or need assistance, please don't hesitate to contact us. Our team is here to help you with any inquiries." %}
+            </p>
+            <div class="d-inline-flex gap-3 mb-4">
+                <a href="tel:+84123456789" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill btn-contact">
+                    <i class="fas fa-phone me-2"></i> {% trans "Call Us" %}
+                </a>
+                <a href="mailto:support@clinic.com" class="btn btn-outline-secondary btn-lg px-4 rounded-pill btn-contact">
+                    <i class="fas fa-envelope me-2"></i> {% trans "Email" %}
+                </a>
+            </div>
+            <div class="mt-4">
+                <p class="text-muted">
+                    <i class="fas fa-clock me-2"></i> {% trans "Working hours:" %} 8:00 AM - 8:00 PM
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,494 @@
+# This file contains the translation strings for Vietnamese
+msgid ""
+msgstr ""
+"Project-Id-Version: Clinic Management System\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-16 12:00+0700\n"
+"PO-Revision-Date: 2025-09-30 08:56+0700\n"
+"Last-Translator: Developer\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: General terms
+msgid "Private Clinic Management System"
+msgstr "Quản lý phòng mạch tư nhân"
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "Book Appointment"
+msgstr "Đặt lịch khám"
+
+msgid "Book now"
+msgstr "Đặt lịch ngay"
+
+msgid "Patient Search"
+msgstr "Tìm kiếm bệnh nhân"
+
+msgid "Search records"
+msgstr "Tìm kiếm hồ sơ"
+
+msgid "About"
+msgstr "Giới thiệu"
+
+msgid "About Our Project"
+msgstr "Giới thiệu về dự án"
+
+msgid "Learn more"
+msgstr "Tìm hiểu thêm"
+
+msgid "Login"
+msgstr "Đăng nhập"
+
+msgid "Logout"
+msgstr "Đăng xuất"
+
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+msgid "Our Services"
+msgstr "Dịch vụ của chúng tôi"
+
+msgid "Easy Booking"
+msgstr "Đặt lịch dễ dàng"
+
+msgid "Patient Records"
+msgstr "Hồ sơ bệnh nhân"
+
+msgid "About Project"
+msgstr "Về dự án"
+
+msgid "Need help?"
+msgstr "Cần trợ giúp?"
+
+msgid "If you have any questions or need assistance, please don't hesitate to contact us. Our team is here to help you with any inquiries."
+msgstr "Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi. Đội ngũ của chúng tôi luôn sẵn sàng giúp đỡ bạn."
+
+msgid "Call Us"
+msgstr "Gọi cho chúng tôi"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Phone"
+msgstr "Điện thoại"
+
+msgid "A simple and effective solution for managing private clinics. Book appointments, manage patients, and streamline your healthcare practice."
+msgstr "Giải pháp đơn giản và hiệu quả để quản lý phòng khám tư nhân. Đặt lịch hẹn, quản lý bệnh nhân và tối ưu hóa hoạt động chăm sóc sức khỏe của bạn."
+
+msgid "Patients can easily book appointments with their preferred doctors using our simple booking system. Choose your doctor, select a convenient time, and you're all set!"
+msgstr "Bệnh nhân có thể dễ dàng đặt lịch hẹn với bác sĩ ưa thích bằng hệ thống đặt lịch đơn giản của chúng tôi. Chọn bác sĩ, chọn thời gian thuận tiện, và bạn đã sẵn sàng!"
+
+msgid "Access your medical history and appointment records with a simple phone number verification. Our system ensures your data is secure while providing easy access when needed."
+msgstr "Truy cập lịch sử y tế và hồ sơ cuộc hẹn của bạn với xác minh số điện thoại đơn giản. Hệ thống của chúng tôi đảm bảo dữ liệu của bạn được bảo mật trong khi cung cấp quyền truy cập dễ dàng khi cần thiết."
+
+msgid "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. Learn more about our goals and how you can contribute."
+msgstr "Đây là một dự án mã nguồn mở được thiết kế để giúp các phòng khám tư nhân ở Việt Nam quản lý hoạt động hiệu quả. Tìm hiểu thêm về mục tiêu của chúng tôi và cách bạn có thể đóng góp."
+
+#: Patient related
+msgid "Patient"
+msgstr "Bệnh nhân"
+
+msgid "Patients"
+msgstr "Bệnh nhân"
+
+msgid "Patient Details"
+msgstr "Chi tiết bệnh nhân"
+
+msgid "Patient ID"
+msgstr "Mã bệnh nhân"
+
+msgid "Name"
+msgstr "Họ tên"
+
+msgid "Full Name"
+msgstr "Họ tên đầy đủ"
+
+msgid "Phone Number"
+msgstr "Số điện thoại"
+
+msgid "Medical History"
+msgstr "Tiền sử bệnh"
+
+msgid "Date of Birth"
+msgstr "Ngày sinh"
+
+msgid "Gender"
+msgstr "Giới tính"
+
+msgid "Male"
+msgstr "Nam"
+
+msgid "Female"
+msgstr "Nữ"
+
+msgid "Address"
+msgstr "Địa chỉ"
+
+msgid "Patient Record"
+msgstr "Hồ sơ bệnh nhân"
+
+msgid "Patient List"
+msgstr "Danh sách bệnh nhân"
+
+msgid "All Patients"
+msgstr "Tất cả bệnh nhân"
+
+msgid "Add New Patient"
+msgstr "Thêm bệnh nhân mới"
+
+msgid "Update Patient"
+msgstr "Cập nhật bệnh nhân"
+
+msgid "Delete Patient"
+msgstr "Xóa bệnh nhân"
+
+msgid "No medical history recorded."
+msgstr "Không có tiền sử bệnh được ghi nhận."
+
+msgid "No patients found."
+msgstr "Không tìm thấy bệnh nhân nào."
+
+msgid "Search patients..."
+msgstr "Tìm kiếm bệnh nhân..."
+
+msgid "Personal Information"
+msgstr "Thông tin cá nhân"
+
+msgid "Back to Patient List"
+msgstr "Quay lại danh sách bệnh nhân"
+
+msgid "patients"
+msgstr "bệnh nhân"
+
+msgid "Showing"
+msgstr "Hiển thị"
+
+msgid "Recent Patients"
+msgstr "Bệnh nhân gần đây"
+
+#: Appointment related
+msgid "Appointment"
+msgstr "Lịch hẹn"
+
+msgid "Appointments"
+msgstr "Lịch hẹn"
+
+msgid "Appointment Details"
+msgstr "Chi tiết lịch hẹn"
+
+msgid "Appointment Information"
+msgstr "Thông tin lịch hẹn"
+
+msgid "Date & Time"
+msgstr "Ngày giờ"
+
+msgid "Date and Time"
+msgstr "Ngày giờ"
+
+msgid "Time"
+msgstr "Thời gian"
+
+msgid "Doctor"
+msgstr "Bác sĩ"
+
+msgid "Note"
+msgstr "Ghi chú"
+
+msgid "Status"
+msgstr "Trạng thái"
+
+msgid "Pending"
+msgstr "Đang chờ"
+
+msgid "Scheduled"
+msgstr "Đã lên lịch"
+
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+msgid "Completed"
+msgstr "Đã hoàn thành"
+
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+msgid "No Show"
+msgstr "Không đến"
+
+msgid "Appointment List"
+msgstr "Danh sách lịch hẹn"
+
+msgid "All Appointments"
+msgstr "Tất cả lịch hẹn"
+
+msgid "Create New Appointment"
+msgstr "Thêm lịch hẹn mới"
+
+msgid "Update Appointment"
+msgstr "Cập nhật lịch hẹn"
+
+msgid "Delete Appointment"
+msgstr "Xóa lịch hẹn"
+
+msgid "Booking Successful"
+msgstr "Đặt lịch thành công"
+
+msgid "No appointments found."
+msgstr "Không tìm thấy lịch hẹn nào."
+
+msgid "No appointments recorded."
+msgstr "Không có lịch hẹn nào được ghi nhận."
+
+msgid "No appointments scheduled for today."
+msgstr "Không có lịch hẹn nào được lên lịch cho hôm nay."
+
+msgid "Appointment Date"
+msgstr "Ngày hẹn"
+
+msgid "Appointment Date & Time"
+msgstr "Ngày giờ hẹn"
+
+msgid "Select the patient for this appointment"
+msgstr "Chọn bệnh nhân cho lịch hẹn này"
+
+msgid "Select the doctor for this appointment"
+msgstr "Chọn bác sĩ cho lịch hẹn này"
+
+msgid "Select the date and time for this appointment"
+msgstr "Chọn ngày giờ cho lịch hẹn này"
+
+msgid "Select the current status of this appointment"
+msgstr "Chọn trạng thái hiện tại của lịch hẹn này"
+
+msgid "Add any additional notes about this appointment"
+msgstr "Thêm bất kỳ ghi chú bổ sung nào về lịch hẹn này"
+
+msgid "appointments"
+msgstr "lịch hẹn"
+
+msgid "Appointment History"
+msgstr "Lịch sử cuộc hẹn"
+
+msgid "Today's Appointments"
+msgstr "Lịch hẹn hôm nay"
+
+msgid "Pending Appointments"
+msgstr "Lịch hẹn đang chờ"
+
+msgid "Filter"
+msgstr "Lọc"
+
+msgid "All"
+msgstr "Tất cả"
+
+msgid "Today"
+msgstr "Hôm nay"
+
+msgid "This Week"
+msgstr "Tuần này"
+
+msgid "Confirm Deletion"
+msgstr "Xác nhận xóa"
+
+msgid "Are you sure you want to delete this appointment?"
+msgstr "Bạn có chắc chắn muốn xóa lịch hẹn này không?"
+
+msgid "Create"
+msgstr "Tạo mới"
+
+msgid "Update"
+msgstr "Cập nhật"
+
+msgid "Details"
+msgstr "Chi tiết"
+
+#: Staff related
+msgid "Staff"
+msgstr "Nhân viên"
+
+msgid "Staff Dashboard"
+msgstr "Bảng điều khiển nhân viên"
+
+msgid "Role"
+msgstr "Vai trò"
+
+msgid "Specialization"
+msgstr "Chuyên môn"
+
+msgid "Work Schedule"
+msgstr "Lịch làm việc"
+
+msgid "Biography"
+msgstr "Tiểu sử"
+
+msgid "Staff List"
+msgstr "Danh sách nhân viên"
+
+msgid "Add New Staff Member"
+msgstr "Thêm nhân viên mới"
+
+msgid "Update Staff Member"
+msgstr "Cập nhật nhân viên"
+
+msgid "Delete Staff Member"
+msgstr "Xóa nhân viên"
+
+msgid "Quick Actions"
+msgstr "Thao tác nhanh"
+
+msgid "Quick Links"
+msgstr "Liên kết nhanh"
+
+msgid "Total Patients"
+msgstr "Tổng số bệnh nhân"
+
+msgid "Total Doctors"
+msgstr "Tổng số bác sĩ"
+
+msgid "View All Appointments"
+msgstr "Xem tất cả lịch hẹn"
+
+msgid "View All Patients"
+msgstr "Xem tất cả bệnh nhân"
+
+msgid "Register New Patient"
+msgstr "Đăng ký bệnh nhân mới"
+
+msgid "Manage Staff"
+msgstr "Quản lý nhân viên"
+
+#: Roles
+msgid "Nurse"
+msgstr "Y tá"
+
+msgid "Receptionist"
+msgstr "Lễ tân"
+
+msgid "Administrator"
+msgstr "Quản trị viên"
+
+#: About page
+msgid "Project Goals"
+msgstr "Mục tiêu dự án"
+
+msgid "Our main goal is to provide a free, open-source solution for private clinics in Vietnam. We aim to simplify the management of appointments, patient records, and staff scheduling."
+msgstr "Mục tiêu chính của chúng tôi là cung cấp một giải pháp miễn phí, mã nguồn mở cho các phòng khám tư nhân ở Việt Nam. Chúng tôi hướng đến việc đơn giản hóa việc quản lý lịch hẹn, hồ sơ bệnh nhân và lịch làm việc của nhân viên."
+
+msgid "By creating an easy-to-use system, we hope to help clinics focus more on patient care and less on administrative tasks."
+msgstr "Bằng cách tạo ra một hệ thống dễ sử dụng, chúng tôi hy vọng giúp các phòng khám tập trung nhiều hơn vào chăm sóc bệnh nhân và ít hơn vào các công việc hành chính."
+
+msgid "Features"
+msgstr "Tính năng"
+
+msgid "Appointment Booking"
+msgstr "Đặt lịch hẹn"
+
+msgid "Easy online booking system for patients"
+msgstr "Hệ thống đặt lịch trực tuyến dễ dàng cho bệnh nhân"
+
+msgid "Staff Management"
+msgstr "Quản lý nhân viên"
+
+msgid "Manage doctors and staff schedules"
+msgstr "Quản lý lịch làm việc của bác sĩ và nhân viên"
+
+# Patient Records is already defined above
+# msgid "Patient Records"
+# msgstr "Hồ sơ bệnh nhân"
+
+msgid "Secure patient data management"
+msgstr "Quản lý dữ liệu bệnh nhân an toàn"
+
+msgid "Multilingual"
+msgstr "Đa ngôn ngữ"
+
+msgid "Support for Vietnamese and English"
+msgstr "Hỗ trợ tiếng Việt và tiếng Anh"
+
+msgid "Open Source"
+msgstr "Mã nguồn mở"
+
+msgid "This project is completely open-source and free to use. You can find the source code on GitHub and contribute to its development."
+msgstr "Dự án này hoàn toàn mã nguồn mở và miễn phí sử dụng. Bạn có thể tìm thấy mã nguồn trên GitHub và đóng góp vào sự phát triển của nó."
+
+msgid "We welcome contributions from developers, healthcare professionals, and anyone interested in improving healthcare management systems."
+msgstr "Chúng tôi hoan nghênh sự đóng góp từ các nhà phát triển, chuyên gia y tế và bất kỳ ai quan tâm đến việc cải thiện hệ thống quản lý y tế."
+
+msgid "View on GitHub"
+msgstr "Xem trên GitHub"
+
+msgid "Contact Us"
+msgstr "Liên hệ với chúng tôi"
+
+msgid "Have questions or suggestions? We'd love to hear from you!"
+msgstr "Bạn có câu hỏi hoặc đề xuất? Chúng tôi rất muốn nghe từ bạn!"
+
+msgid "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. The system provides tools for appointment booking, patient management, and staff administration."
+msgstr "Đây là một dự án mã nguồn mở được thiết kế để giúp các phòng khám tư nhân ở Việt Nam quản lý hoạt động hiệu quả. Hệ thống cung cấp các công cụ đặt lịch hẹn, quản lý bệnh nhân và quản lý nhân viên."
+
+msgid "Community Project: Private Clinic Management System"
+msgstr "Dự án cộng đồng: Quản lý phòng mạch tư nhân"
+
+msgid "Free"
+msgstr "Miễn phí"
+
+# Open Source is already defined above
+# msgid "Open Source"
+# msgstr "Mã nguồn mở"
+
+msgid "Supporting Vietnamese Doctors"
+msgstr "Hỗ trợ bác sĩ Việt Nam"
+
+msgid "Download source code here"
+msgstr "Tải source code tại đây"
+
+msgid "Main Features"
+msgstr "Tính năng chính"
+
+msgid "Contributions"
+msgstr "Đóng góp"
+
+#: Actions
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "View"
+msgstr "Xem"
+
+msgid "View details"
+msgstr "Xem chi tiết"
+
+msgid "Edit"
+msgstr "Sửa"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "Return to Home"
+msgstr "Trở về trang chủ"
+
+msgid "Actions"
+msgstr "Hành động"
+
+msgid "Back to List"
+msgstr "Quay lại danh sách"
+
+msgid "New Appointment"
+msgstr "Lịch hẹn mới"
+
+msgid "New appointment"
+msgstr "Lịch hẹn mới"
+
+msgid "Clinic Logo"
+msgstr "Logo phòng khám"

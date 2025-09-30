@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "About Our Project" %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'app_home:home' %}">{% trans "Home" %}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "About" %}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-5 fw-bold text-center mb-5">{% trans "About Our Project" %}</h1>
+            
+            <div class="card mb-5 shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-primary">{% trans "Private Clinic Management System" %}</h2>
+                    <p class="card-text fs-5">
+                        {% trans "This is an open-source project designed to help private clinics in Vietnam manage their operations efficiently. The system provides tools for appointment booking, patient management, and staff administration." %}
+                    </p>
+                </div>
+            </div>
+            
+            {% if about_contents %}
+                {% for content in about_contents %}
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-primary">{{ content.title }}</h3>
+                            <div class="card-text">{{ content.content|linebreaks }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">{% trans "Project Goals" %}</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="card-text">
+                            {% trans "Our main goal is to provide a free, open-source solution for private clinics in Vietnam. We aim to simplify the management of appointments, patient records, and staff scheduling." %}
+                        </p>
+                        <p class="card-text">
+                            {% trans "By creating an easy-to-use system, we hope to help clinics focus more on patient care and less on administrative tasks." %}
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">{% trans "Features" %}</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="feature-icon bg-primary bg-gradient text-white me-3 p-2 rounded">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">{% trans "Appointment Booking" %}</h4>
+                                        <p>{% trans "Easy online booking system for patients" %}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="feature-icon bg-primary bg-gradient text-white me-3 p-2 rounded">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">{% trans "Staff Management" %}</h4>
+                                        <p>{% trans "Manage doctors and staff schedules" %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="feature-icon bg-primary bg-gradient text-white me-3 p-2 rounded">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">{% trans "Patient Records" %}</h4>
+                                        <p>{% trans "Secure patient data management" %}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="feature-icon bg-primary bg-gradient text-white me-3 p-2 rounded">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">{% trans "Multilingual" %}</h4>
+                                        <p>{% trans "Support for Vietnamese and English" %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">{% trans "Open Source" %}</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="card-text">
+                            {% trans "This project is completely open-source and free to use. You can find the source code on GitHub and contribute to its development." %}
+                        </p>
+                        <p class="card-text">
+                            {% trans "We welcome contributions from developers, healthcare professionals, and anyone interested in improving healthcare management systems." %}
+                        </p>
+                        <div class="text-center mt-4">
+                            <a href="https://github.com/example/clinic-management" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-github me-2"></i> {% trans "View on GitHub" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">{% trans "Contact Us" %}</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="card-text">
+                            {% trans "Have questions or suggestions? We'd love to hear from you!" %}
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-envelope text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h5 class="mb-0">{% trans "Email" %}</h5>
+                                        <p class="mb-0">contact@clinic-management.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-phone text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h5 class="mb-0">{% trans "Phone" %}</h5>
+                                        <p class="mb-0">+84 123 456 789</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
