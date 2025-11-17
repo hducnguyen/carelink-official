@@ -1,7 +1,5 @@
 # CareLink - Hệ thống Quản lý Phòng khám | Clinic Management System
 
-![CareLink Logo](static/images/logo.png)
-
 ## Giới thiệu | Introduction
 
 **Tiếng Việt:**  
@@ -97,7 +95,7 @@ CareLink is developed using Django - a powerful Python framework with many advan
 
 1. Clone repository về máy:
 ```bash
-git clone https://github.com/your-username/carelink.git
+git clone https://github.com/hducnguyen/carelink-official.git
 cd carelink
 ```
 
@@ -134,7 +132,7 @@ python manage.py runserver
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/carelink.git
+git clone https://github.com/hducnguyen/carelink-official.git
 cd carelink
 ```
 
@@ -197,13 +195,13 @@ The project is released under the MIT license. See the LICENSE file for more det
 
 **Tiếng Việt:**  
 Nếu bạn có câu hỏi hoặc đề xuất, vui lòng liên hệ qua:
-- Email: contact@carelink.com
-- GitHub Issues: [https://github.com/your-username/carelink/issues](https://github.com/your-username/carelink/issues)
+- Email: jackyboy.vinshool@gmail.com
+- GitHub Issues: [https://github.com/hducnguyen/carelink-official/issues](https://github.com/hducnguyen/carelink-official/issues)
 
 **English:**  
 If you have questions or suggestions, please contact us via:
-- Email: contact@carelink.com
-- GitHub Issues: [https://github.com/your-username/carelink/issues](https://github.com/your-username/carelink/issues)
+- Email: jackyboy.vinshool@gmail.com
+- GitHub Issues: [https://github.com/hducnguyen/carelink-official/issues](https://github.com/hducnguyen/carelink-official/issues)
 
 ---
 
